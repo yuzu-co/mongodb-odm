@@ -680,7 +680,7 @@ class DocumentManager implements ObjectManager
         }
 
         if ($referenceMapping['storeAs'] === ClassMetadataInfo::REFERENCE_STORE_AS_ID) {
-            if ($class->inheritanceType === ClassMetadataInfo::INHERITANCE_TYPE_SINGLE_COLLECTION) {
+            if ($class->inheritanceType === ClassMetadataInfo::INHERITANCE_TYPE_COLLECTION_PER_CLASS) {
                 throw MappingException::simpleReferenceMustNotTargetDiscriminatedDocument($referenceMapping['targetDocument']);
             }
             return $class->getDatabaseIdentifierValue($id);
